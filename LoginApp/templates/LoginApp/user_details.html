@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends 'LoginApp/base.html' %}
+{% block title %} user_details {% endblock %}
+{% block body %}
+<h2>user deatils page </h2>
+<a href="{% url 'LoginApp:logout_user' %}" style="text-align: end;">Logout</a>
+<div style="border: 2px;background-color: aliceblue;">
+    
+    <table style="border: 2px;">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>email</th>
+                <th>mobile</th>
+                <th>username</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in Users %}
+            <tr>
+                <Td>{{user.first_name}}</Td>
+                <Td>{{user.last_name}}</Td>
+                <Td>{{user.email}}</Td>
+                <Td>{{user.mobile}}</Td>
+                <td>{{user.username}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+
+
+{% endblock %}
